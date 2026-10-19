@@ -1,7 +1,7 @@
 # Synthetic Email Ground Truth Dataset
 
 ## Overview
-This repository contains a reproducible Python script (`generate_dataset.py`) that generates a ground-truth dataset of 200 realistic synthetic customer service emails (`emails.csv`). The dataset is engineered to prevent models from relying on superficial keyword shortcuts (such as matching words like "cancel" or "payment"), ensuring classifiers rely on true semantic context and nuance.
+This repository contains a Python script (`generate_emails.py`) that generates a ground-truth dataset of exactly 200 realistic synthetic customer service emails (`emails.csv`). The dataset is engineered to prevent models from relying on superficial keyword shortcuts (such as matching words like "cancel" or "payment"), ensuring classifiers rely on true semantic context and nuance.
 
 ## Dataset Schema
 The output CSV (`emails.csv`) contains the following columns:
@@ -10,8 +10,7 @@ The output CSV (`emails.csv`) contains the following columns:
 * **body**: Simulated email body incorporating realistic variables (dates, ticket numbers, card suffixes, license plates, and names).
 * **category**: The ground-truth classification label.
 
-## Categories & Labeling Guidelines
-The dataset represents five core categories:
+## Five Categories & Labeling Guidelines
 1. **Reservation Inquiry**: Questions regarding vehicle availability, rental dates, quotes, or holding bookings.
 2. **Cancellation Request**: Communications requesting to terminate, call off, or cancel an active reservation, including policy inquiries.
 3. **Payment Issue**: Transaction failures, declined credit cards, double billing, card updates, or receipt requests.
@@ -20,7 +19,7 @@ The dataset represents five core categories:
 
 ## Methodology & Realism
 * **Faker Integration**: Utilized the `Faker` library combined with randomized templates to dynamically generate realistic contextual details.
-* **Realism & Noise**: Incorporated varied tones, mixed salutations, overlapping terminology (e.g., cancellation terms appearing in billing inquiries), and occasional lowercase formatting noise to mimic authentic human communication.
+* **Realism & Noise**: Incorporated varied tones, mixed salutations, overlapping terminology, and occasional lowercase formatting noise to mimic authentic human communication.
 * **Balanced Distribution**: Exactly 200 rows divided equally across all five categories (40 rows per category) and shuffled for training and evaluation readiness.
 
 ## How to Run
